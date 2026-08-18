@@ -1,6 +1,6 @@
 ## Status da Entrega
 <img 
-    src="http://3.130.178.228/progeficaz/Projeto1/svg/Kevminso14/projeto-1a-KevinSong" 
+    src="http://3.130.178.228/progeficaz/Projeto1/svg/kevminso14/projeto-1a-KevinSong" 
     alt="svg" 
     width="100%" 
     height="300px"
