@@ -29,6 +29,13 @@ def add_data(titulo,detalhes):
     conexao.commit()
     conexao.close()
 
+def delete_data(id):
+    conexao = sqlite3.connect('banco.db')
+    cursor = conexao.cursor()
+    cursor.execute('delete from note where id=?',(id,))
+
+    conexao.commit()
+    conexao.close()
 
 def load_template(nome_arquivo):
     caminho = 'static/templates/' + nome_arquivo
