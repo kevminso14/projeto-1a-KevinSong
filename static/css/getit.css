@@ -1,0 +1,40 @@
+img {
+    width: 120px;
+}
+
+.cabecalho {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    background-color: #ffe866;
+    padding: 12px 20px;
+    border-bottom: 2px solid #d6c14d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+}
+.cabecalho p {
+    font-size: 30px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #bbf6ff;
+    margin: 0px;
+}
+
+form {
+   background-color: #8ad2dd;
+   border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+
+.note {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+.note h3 {
+    font-size: 20px;
+}
