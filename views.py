@@ -1,5 +1,5 @@
-from utils import load_data, load_template, add_data, delete_data
-import json
+from utils import load_data, load_template, add_data, delete_data, update_data, update_note
+
 
 def index():
     note_template = load_template('components/notes.html')
@@ -19,3 +19,15 @@ def submit(titulo, detalhes):
 
 def delete(id):
     delete_data(id)
+
+def update(id):
+    nota= update_data(id)
+
+    return load_template('update.html').format(
+        id=nota["id"],
+        titulo=nota["titulo"],
+        detalhes=nota["detalhes"]
+    )
+
+def save_update(id, titulo, detalhes):
+    update_note(id, titulo, detalhes)

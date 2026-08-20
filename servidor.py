@@ -25,6 +25,22 @@ def delete(id):
     views.delete(id)
     return redirect('/')
 
+@app.route('/update/<int:id>')
+def edit(id):
+
+    return render_template_string(views.update(id))
+
+@app.route('/update', methods=['POST'])
+def update_form():
+    id = request.form.get('id')
+    titulo = request.form.get('titulo')
+    detalhes = request.form.get('detalhes')
+
+    views.save_update(id, titulo, detalhes)
+
+    return redirect('/')
+
+
 
 
 if __name__ == '__main__':

@@ -37,6 +37,25 @@ def delete_data(id):
     conexao.commit()
     conexao.close()
 
+def update_data(id):
+    conexao = sqlite3.connect('banco.db')
+    cursor = conexao.cursor()
+    cursor.execute('select * from note where id=?', (id,))
+    dado = cursor.fetchone()
+    conexao.close()
+    return {
+        "id": dado[0],
+        "titulo": dado[1],
+        "detalhes": dado[2]
+    }
+
+def update_note(id, titulo, detalhes):
+    conexao = sqlite3.connect('banco.db')
+    cursor = conexao.cursor()
+    cursor.execute('update note set title=? ,content=? where id =?',(titulo,detalhes,id))
+    conexao.commit()
+    conexao.close()
+
 def load_template(nome_arquivo):
     caminho = 'static/templates/' + nome_arquivo
     with open(caminho, "r", encoding= "utf-8") as arquivo:
