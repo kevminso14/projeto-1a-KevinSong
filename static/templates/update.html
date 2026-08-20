@@ -1,25 +1,30 @@
-<link rel="stylesheet" href="{{{{ url_for('static', filename='css/getit.css') }}}}">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Editar anotação</title>
+    <link rel="stylesheet" href="{{{{ url_for('static', filename='css/getit.css') }}}}">
+</head>
+
+<body>
 
     <div class="cabecalho">
-    <img src="{{{{ url_for('static', filename='img/logo-getit.png') }}}}">
-    <p>Como o Post-it, mas com outro verbo</p>
-</div>
-    <title>Editar anotação</title>
-</head>
-<body>
-    <form action="/update" method="POST">
-    <input type="hidden" name="id" value="{id}">
-    <label  for="titulo">Título</label>
-    <input id="titulo" type="text" name="titulo" value="{titulo}">
+        <img src="{{{{ url_for('static', filename='img/logo-getit.png') }}}}">
+        <p>Como o Post-it, mas com outro verbo</p>
+    </div>
 
-    <label for="detalhes">Detalhes</label>
-    <input id="detalhes"  type="text" name="detalhes" value="{detalhes}">
-    <button type="submit">Salvar</button>
-    <a href="/">Cancelar</a>
+    <form action="/update" method="POST">
+        <input type="hidden" name="id" value="{id}">
+
+        <label for="titulo">Título</label>
+        <input id="titulo" type="text" name="titulo" value="{titulo}">
+
+        <label for="detalhes">Detalhes</label>
+        <input id="detalhes" type="text" name="detalhes" value="{detalhes}">
+
+        <button type="submit">Salvar</button>
+        <a href="/" name="edit_cancel">Cancelar</a>
     </form>
+
 </body>
 </html>
