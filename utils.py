@@ -4,7 +4,7 @@ import sqlite3
 def load_data():
     conexao = sqlite3.connect('banco.db')
     cursor = conexao.cursor()
-    cursor.execute("select * from note")
+    cursor.execute("select * from note order by favorite desc")
     dados = cursor.fetchall()
 
     dados_formatador=[]
@@ -12,7 +12,8 @@ def load_data():
         dados_formatador.append({
             "id": dado[0],
             "titulo": dado[1],
-            "detalhes": dado[2]
+            "detalhes": dado[2],
+            "estrela": "★" if dado[3] == 1 else "☆"
         })
 
     conexao.close()
@@ -55,6 +56,14 @@ def update_note(id, titulo, detalhes):
     cursor.execute('update note set title=? ,content=? where id =?',(titulo,detalhes,id))
     conexao.commit()
     conexao.close()
+
+def favorite_data(id):
+    conexao = sqlite3.connect('banco.db')
+    cursor = conexao.cursor()
+    cursor.execute('update note set favorite = 1-favorite where id = ?',(id,))
+    conexao.commit()
+    conexao.close()
+
 
 def load_template(nome_arquivo):
     caminho = 'static/templates/' + nome_arquivo

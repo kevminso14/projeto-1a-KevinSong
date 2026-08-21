@@ -1,4 +1,4 @@
-from utils import load_data, load_template, add_data, delete_data, update_data, update_note
+from utils import load_data, load_template, add_data, delete_data, update_data, update_note, favorite_data
 
 
 def index():
@@ -7,7 +7,8 @@ def index():
         note_template.format(
             id=dados['id'],
             title=dados['titulo'],
-            details=dados['detalhes']
+            details=dados['detalhes'],
+            estrela=dados['estrela']
         )
     for dados in load_data()
     ]
@@ -31,3 +32,6 @@ def update(id):
 
 def save_update(id, titulo, detalhes):
     update_note(id, titulo, detalhes)
+
+def favorite(id):
+    favorite_data(id)

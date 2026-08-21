@@ -7,9 +7,11 @@ cursor.execute("""
 CREATE TABLE IF NOT EXISTS note (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT NOT NULL,
-    content TEXT NOT NULL
+    content TEXT NOT NULL,
+    favorite INTEGER NOT NULL DEFAULT 0
 )
 """)
+
 
 conexao.commit()
 conexao.close()

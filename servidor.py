@@ -40,6 +40,10 @@ def update_form():
 
     return redirect('/')
 
+@app.route('/favorite/<int:id>')
+def favorite(id):
+    views.favorite(id)
+    return redirect('/')
 
 
 
